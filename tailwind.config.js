@@ -5,6 +5,15 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      gridTemplateColumns: {
+        projectsGrid: "repeat(auto-fill, minmax(300px,1fr))",
+      },
+      height: {
+        80: "80%",
+        85: "85%",
+        90: "90%",
+        95: "95%",
+      },
       colors: {
         primary: "#FFB400",
         variantPrimary: "#FFB400F2",
