@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 
 import menuIcon from "public/menu-sharp.svg";
+import Link from "next/link";
 interface IHeaderProps {}
 
 const Header: FunctionComponent<IHeaderProps> = (props) => {

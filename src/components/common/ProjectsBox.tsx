@@ -1,8 +1,11 @@
 import { useState, FunctionComponent } from "react";
 import ProjectBox, { Project } from "./Project";
+import SectionHead from "./SectionHead";
+import TransELement from "./TransElement";
 
 interface IProjectsBoxProps {
   projects: Project[];
+  sectionId?: string;
 }
 
 type Tag = {
@@ -12,7 +15,6 @@ type Tag = {
 
 const ProjectsBox: FunctionComponent<IProjectsBoxProps> = ({ projects }) => {
   const [selectedTags, setSelectedTags] = useState<Set<string>>(new Set());
-  console.log("🚀 ~ file: ProjectsBox.tsx:15 ~ selectedTags", selectedTags);
 
   function getTagsFromProjects() {
     const uniqueTags = new Set<string>();
@@ -31,7 +33,13 @@ const ProjectsBox: FunctionComponent<IProjectsBoxProps> = ({ projects }) => {
     });
   };
   return (
-    <div className={`m-3 h-fit flex flex-col gap-2`}>
+    <div
+      className={`m-1 h-fit flex flex-col gap-2 justify-center items-center`}
+    >
+      <SectionHead
+        title="My Projects"
+        description="Some of my side projects and technologies that i used to build it"
+      />
       <div
         className={`w-full h-fit md:p-8 p-4 flex flex-col gap-4 md:gap-6 bg-lightCompBg dark:bg-darkCompBg `}
       >
@@ -62,7 +70,7 @@ const ProjectsBox: FunctionComponent<IProjectsBoxProps> = ({ projects }) => {
         </div>
       </div>
       {/* projects */}
-      <div className="flex flex-col gap-2 ">
+      <div className="grid grid-cols-projectsGrid gap-2 ">
         {projects
           .filter(
             (projectData) =>
@@ -70,7 +78,9 @@ const ProjectsBox: FunctionComponent<IProjectsBoxProps> = ({ projects }) => {
               projectData.tags.some((tag) => selectedTags.has(tag))
           )
           .map((filteredProjectData) => (
-            <ProjectBox project={filteredProjectData} />
+            <div key={filteredProjectData.id} className="">
+              <ProjectBox project={filteredProjectData} />
+            </div>
           ))}
       </div>
     </div>

@@ -2,11 +2,15 @@ import { FunctionComponent } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-interface IIntroProps {}
+interface IIntroProps {
+  extraStyle?: string;
+}
 
 const Intro: FunctionComponent<IIntroProps> = (props) => {
   return (
-    <div className="relative py-4 m-3 bg-lightCompBg dark:bg-darkCompBg flex flex-col items-center justify-center gap-8">
+    <div
+      className={`relative py-4 bg-lightCompBg dark:bg-darkCompBg flex flex-col items-center justify-center gap-8 ${props?.extraStyle}`}
+    >
       <h1 className="w-fit font-bold text-center text-secondary  dark:text-white flex flex-col gap-1">
         <span>Khaled</span>
         <span>Sobhy</span>
