@@ -1,14 +1,16 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect } from "react";
+import useFixVH from "../../../hooks/useFixVH";
 
 interface ISideBarProps {
   sectionId?: string;
 }
 
 const SideBar: FunctionComponent<ISideBarProps> = (props) => {
+  useFixVH();
   return (
     <div
       id={props?.sectionId}
-      className="py-1 h-full overflow-y-auto md:overflow-hidden flex flex-col gap-2 items-center  justify-between px-6"
+      className="py-1 fix-height-mobile overflow-y-auto flex flex-col gap-2 items-center  justify-between px-6 p-10"
     >
       <h2 className="text-secondary dark:text-white whitespace-nowrap	">
         Khaled Sobhy
@@ -284,9 +286,9 @@ const SideBar: FunctionComponent<ISideBarProps> = (props) => {
       <div className="border-t w-full my-2 dark:border-gray-500"></div>
       {/* download cv */}
 
-      <div className=" w-full flex justify-center py-1">
+      <div className=" w-full flex justify-center">
         <a
-          href="https://drive.google.com/file/d/12i6n5uMBZARHL88siVQPPWZ5pY8RpHWx/view"
+          href="https://drive.google.com/u/0/uc?id=12i6n5uMBZARHL88siVQPPWZ5pY8RpHWx&export=download"
           download={true}
           target="_blank"
           className="w-fit gap-2 text-sm px-4 py-2 uppercase bg-primary dark:text-white text-black text-nowrap flex justify-center items-center"
@@ -294,7 +296,7 @@ const SideBar: FunctionComponent<ISideBarProps> = (props) => {
           <span>download cv</span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-5 h-5 fill-primary"
+            className="w-5 h-5 fill-primary  animate-bounce"
             viewBox="0 0 512 512"
           >
             <title>Download</title>

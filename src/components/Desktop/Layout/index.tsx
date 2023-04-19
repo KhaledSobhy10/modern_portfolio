@@ -12,41 +12,36 @@ interface ILayoutProps {}
 const projects: Project[] = [
   {
     id: "1",
-    title: "Blog;",
-    tags: ["HTML", "CSS"],
-    description: "Build blog;",
-    demoLink: "dmo link;",
-    srcLink: "src link;",
+    title: "kanban Task Management",
+    tags: ["HTML", "CSS", "JS", "React", "tailwindcss"],
+    description:
+      "kanban Task Management board have features like create board and add tasks and task have sub task darg & drop ",
+    demoLink: "https://stellar-paletas-0aa871.netlify.app/",
+    srcLink: "https://github.com/KhaledSobhy10/Task-Management",
   },
   {
     id: "2",
-    title: "Blog;",
-    tags: ["HTML", "CSS", "JS"],
-    description: "Build blog;",
-    demoLink: "dmo link;",
-    srcLink: "src link;",
+    title: "Search Countries app",
+    tags: ["HTML", "CSS", "JS", "React", "tailwindcss"],
+    description:
+      "Search Countries Web app have search by name and get all details about country Native Name , Region , Population and borders",
+    demoLink: "https://gorgeous-alpaca-9ec8f1.netlify.app/",
+    srcLink:
+      "https://github.com/KhaledSobhy10/REST-Countries-API-with-color-theme-switcher",
   },
   {
     id: "3",
-    title: "Blog;",
-    tags: ["HTML", "CSS", "JS", "REACT"],
-    description: "Build blog;",
-    demoLink: "dmo link;",
-    srcLink: "src link;",
-  },
-  {
-    id: "4",
-    title: "Blog;",
-    tags: ["HTML", "CSS", "JS", "NEXTJS"],
-    description: "Build blog;",
-    demoLink: "dmo link;",
-    srcLink: "src link;",
+    title: "Insta clone",
+    tags: ["HTML", "CSS", "JS", "REACT", "FIREBASE", "tailwindcss"],
+    description: "Instagram clone with react and firebase as backend",
+    demoLink: "https://github.com/KhaledSobhy10/insta-clone",
+    srcLink: "https://github.com/KhaledSobhy10/insta-clone",
   },
 ];
 const Layout: React.FunctionComponent<ILayoutProps> = (props) => {
   return (
     <div>
-      <div className="md:flex gap-2 hidden h-screen">
+      <div className="md:flex gap-2 hidden">
         <div className="w-[270px] overflow-hidden relative">
           <div className="dark:bg-darkCompBg bg-white h-screen fixed w-[270px]">
             <SideBar />

@@ -5,10 +5,32 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+        "bounce-left": {
+          "0%, 100%": { transform: "translateX(-25%)" },
+          "50%": { transform: "translateX(0)" },
+        },
+        "increase-width": {
+          "0%, 100%": { transform: "scaleX(1.2)" },
+          "50%": { transform: "scaleX(.3)" },
+        },
+      },
+      animation: {
+        "spin-slow": "spin 3s linear infinite",
+        wiggle: "wiggle 1s ease-in-out infinite",
+        "bounce-left": "bounce-left 1s  infinite",
+        "increase-width": "increase-width 2s ease-in-out infinite",
+      },
       gridTemplateColumns: {
-        projectsGrid: "repeat(auto-fill, minmax(300px,1fr))",
+        projectsGrid: "repeat(auto-fit, minmax(250px,350px))",
       },
       height: {
+        "40%": "40%",
+        50: "50%",
         80: "80%",
         85: "85%",
         90: "90%",

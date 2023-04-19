@@ -9,7 +9,7 @@ const WorkExperience: FunctionComponent<IWorkExperienceProps> = (props) => {
   return (
     <div
       id={props?.sectionId}
-      className="m-1  boxing-border flex flex-col items-center justify-center gap-3 rounded"
+      className="m-1   boxing-border flex flex-col items-center justify-center gap-3 rounded"
     >
       <SectionHead
         title="work experience"

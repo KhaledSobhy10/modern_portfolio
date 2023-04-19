@@ -19,7 +19,7 @@ const ProjectsBox: FunctionComponent<IProjectsBoxProps> = ({ projects }) => {
   function getTagsFromProjects() {
     const uniqueTags = new Set<string>();
     projects.forEach(({ tags }) => {
-      tags.forEach((tag) => uniqueTags.add(tag));
+      tags.forEach((tag) => uniqueTags.add(tag.toLocaleLowerCase()));
     });
     return Array.from(uniqueTags);
   }
@@ -59,28 +59,31 @@ const ProjectsBox: FunctionComponent<IProjectsBoxProps> = ({ projects }) => {
           {getTagsFromProjects().map((tag) => (
             <button
               key={tag}
-              className={`md:text-base text-xs  border rounded-2xl py-1 px-6  active:scale-105 border-primary ${
+              className={`capitalize md:text-base text-xs  border rounded-2xl py-1 px-6  active:scale-105 border-primary ${
                 selectedTags?.has(tag) ? "bg-primary" : "dark:text-white"
               } transition-colors`}
               onClick={() => handleTagClicked(tag)}
             >
-              {tag}
+              {tag.toUpperCase()}
             </button>
           ))}
         </div>
       </div>
       {/* projects */}
-      <div className="grid grid-cols-projectsGrid gap-2 ">
+      <div className="w-full grid grid-cols-projectsGrid gap-2 ">
         {projects
           .filter(
             (projectData) =>
               selectedTags.size === 0 ||
-              projectData.tags.some((tag) => selectedTags.has(tag))
+              projectData.tags.some((tag) =>
+                selectedTags.has(tag.toLocaleLowerCase())
+              )
           )
           .map((filteredProjectData) => (
-            <div key={filteredProjectData.id} className="">
-              <ProjectBox project={filteredProjectData} />
-            </div>
+            <ProjectBox
+              project={filteredProjectData}
+              key={filteredProjectData.id}
+            />
           ))}
       </div>
     </div>

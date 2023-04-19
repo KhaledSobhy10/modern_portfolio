@@ -28,7 +28,7 @@ const Drawer: FunctionComponent<IDrawerProps> = (props) => {
         htmlFor="drawer"
         className="drawer-overlay block  h-screen bg-black/50"
       ></label>
-      <div className="drawer-content absolute top-0 left-0  w-[290px] h-screen  drawer-content ml-[-290px]  w-80 bg-lightCompBg dark:bg-darkCompBg">
+      <div className="drawer-content absolute top-0 left-0  w-[290px] drawer-content ml-[-290px]  w-80 bg-lightCompBg dark:bg-darkCompBg h-fit ">
         {props.children}
       </div>
     </div>
